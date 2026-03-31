@@ -1,0 +1,15 @@
+title: "Ozmundo's Blog"
+email: ozmundo.vasqualez@gmail.com
+description: >-
+  Personal blog built with Jekyll and hosted on GitHub Pages.
+baseurl: ""
+url: "https://ozmundo-v.github.io"
+twitter_username: ""
+github_username: ozmundo-v
+
+theme: minima
+plugins:
+  - jekyll-feed
+
+markdown: kramdown
+permalink: /:categories/:year/:month/:day/:title/

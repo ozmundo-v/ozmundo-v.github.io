@@ -1,0 +1,6 @@
+---
+# Minima 2.5.1 does not import custom.scss; we chain it here.
+---
+
+@import "minima";
+@import "minima/custom";

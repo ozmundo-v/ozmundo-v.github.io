@@ -1,0 +1,208 @@
+// Dark theme + matrix-style column (left third)
+
+$matrix-green: #00ff66;
+$matrix-green-dim: rgba(0, 255, 102, 0.06);
+$bg-deep: #060806;
+$bg-panel: #0a0f0a;
+$text-main: #dce5dc;
+$text-muted: #8fa38f;
+$link: #5ee88a;
+$link-hover: #8fffb0;
+
+html {
+  background-color: $bg-deep;
+}
+
+body {
+  color: $text-main;
+  background-color: $bg-deep;
+  position: relative;
+  min-height: 100vh;
+}
+
+// Matrix gradient column: fixed left third
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 33.333%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    // faint vertical "code rain" lines
+    repeating-linear-gradient(
+      90deg,
+      $matrix-green-dim 0,
+      $matrix-green-dim 1px,
+      transparent 1px,
+      transparent 14px
+    ),
+    // soft scan / glow bands
+    linear-gradient(
+      180deg,
+      rgba(0, 80, 40, 0.22) 0%,
+      rgba(0, 25, 12, 0.08) 45%,
+      rgba(0, 60, 35, 0.18) 100%
+    ),
+    // deep green-black base
+    linear-gradient(
+      145deg,
+      #020403 0%,
+      $bg-panel 55%,
+      #050a06 100%
+    );
+}
+
+// Soft edge where column meets content
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 33.333%;
+  width: min(120px, 15vw);
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 255, 100, 0.07),
+    transparent
+  );
+}
+
+body > header,
+body > main,
+body > footer {
+  position: relative;
+  z-index: 1;
+}
+
+.site-header {
+  border-top: 0;
+  border-bottom: 1px solid rgba(0, 255, 100, 0.12);
+  background: rgba(6, 10, 8, 0.88);
+  backdrop-filter: blur(10px);
+}
+
+.site-title,
+.site-title:visited {
+  color: $text-main;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.site-nav .page-link {
+  color: $text-muted;
+}
+
+.site-nav .page-link:hover {
+  color: $link-hover;
+}
+
+// Hamburger icon (SVG paths)
+.site-header .menu-icon svg path {
+  fill: $text-muted;
+}
+
+.site-footer {
+  border-top: 1px solid rgba(0, 255, 100, 0.1);
+  background: rgba(5, 8, 6, 0.92);
+  color: $text-muted;
+}
+
+.footer-heading {
+  color: $text-main;
+}
+
+a,
+.post-content a {
+  color: $link;
+}
+
+a:visited {
+  color: mix($link, #888, 70%);
+}
+
+a:hover {
+  color: $link-hover;
+  text-decoration: none;
+}
+
+.post-list-heading,
+.page-heading {
+  color: $text-main;
+}
+
+.post-meta {
+  color: $text-muted;
+}
+
+.post-link,
+.post-link:visited {
+  color: $text-main;
+}
+
+.post-link:hover {
+  color: $link-hover;
+}
+
+.post-content {
+  h1, h2, h3, h4, h5, h6 {
+    color: $text-main;
+  }
+
+  blockquote {
+    border-left-color: rgba(0, 255, 100, 0.35);
+    color: $text-muted;
+    background: rgba(0, 40, 20, 0.2);
+  }
+
+  code {
+    border: 1px solid rgba(0, 255, 100, 0.15);
+    background: rgba(0, 30, 15, 0.55);
+    color: #b8f5c8;
+  }
+
+  pre,
+  pre.highlight {
+    border: 1px solid rgba(0, 255, 100, 0.12);
+    background: #050805;
+    color: $text-main;
+  }
+
+  pre code {
+    border: 0;
+    background: transparent;
+  }
+}
+
+table {
+  color: $text-main;
+}
+
+table th,
+table td {
+  border-color: rgba(0, 255, 100, 0.15);
+}
+
+hr {
+  border-color: rgba(0, 255, 100, 0.12);
+}
+
+// Syntax highlighting: keep readable on dark
+.highlight {
+  background: #050805;
+}
+
+@include media-query($on-palm) {
+  body::before {
+    width: 100%;
+    opacity: 0.45;
+  }
+
+  body::after {
+    display: none;
+  }
+}
