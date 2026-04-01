@@ -5,8 +5,10 @@ date: 2026-03-31 09:00:00 -0700
 categories: intro
 ---
 
-I’m a developer based in the South West of the UK. This site is a simple home for things I build in my spare time: small apps, experiments, and side projects that live on GitHub.
+I've been playing with code for a few decades now, on and off. These days I let other smart people do the imprtant stuff and I just tinker here and there. This blog is a simple home for things I build in my spare time: small apps, experiments, and side projects that live on GitHub. Yes, I have started to use AI too.
 
-Think of it as a storefront for hobby work—nothing commercial, just a place to show what I’ve made and link out to repos when they’re worth sharing. I’ll post updates here when something new ships or when a project is worth a closer look.
+If you see anything useful, please feel free to use it.
 
-Thanks for stopping by.
+Cheers,
+
+Oz.
